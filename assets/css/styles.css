@@ -196,11 +196,23 @@ header #toggler{
 .about .row .video-container{
     flex:1 1 40rem;
     position: relative;
+
+}
+
+.about .row .video-container video{
+    width: 100%;
+    border: 1.5rem solid #fff;
+    border-radius: 5rem;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+
     
 }
 
 
+.about .row .content{
+   flex: 1 1 40rem;
 
+}
 
 
 
