@@ -200,11 +200,29 @@ header #toggler{
 }
 
 .about .row .iframe{
-    
+    flex: 1 1 40 rem;
+    position: relative;
+}
+
+.about .row .video-container{
+  width: 100%;
+  border: 1.5rem solid #fff;
+  border-radius: .5rem;
+  box-shadow: 0.5rem 1rem rgba(0,0,0,.1);
 }
 
 
+.about .row .video-container h3{
+   position: absolute;
+   top: 50%; transform: translate(-50%);
+   font-size: 3rem;
+  }
+  
 
+
+.about .row .content{
+    flex: 1 1 40 rem;
+}
 
 
 
