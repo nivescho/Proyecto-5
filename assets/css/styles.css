@@ -30,6 +30,37 @@
 
 }
 
+
+.carousel {
+    display: flex;
+  }
+  
+  .carousel img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .testimonials {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .testimonial {
+    width: calc(50% - 20px);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+    margin-bottom: 20px;
+  }
+  
+  .testimonial img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
 html{
     font-size: 62.5%;
     scroll-behavior: smooth;
@@ -183,30 +214,20 @@ header #toggler{
 
 
 
-.about .row{
+.video-content {
     display: flex;
+    flex-direction: row;
     align-items: center;
-    gap:2rem;
-    flex-wrap: wrap;
-    padding: 2rem 0;
-    padding-bottom: 3rem;
-}
-
-
-.about .row .video-container{
-    flex:1 1 40rem;
-    position: relative;
-
-}
-
-.about .row .video-container video{
-    width: 100%;
-    border: 1.5rem solid #fff;
-    border-radius: 5rem;
-    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
-
-    
-}
+  }
+  
+  .video-container {
+    margin-right: 20px; /* Espacio entre el video y el texto */
+  }
+  
+  .text-container h3 {
+  font-size: 12px ; /* Permite que el contenedor de texto ocupe el espacio restante */
+  }
+  
 
 
 .about .row .content{
