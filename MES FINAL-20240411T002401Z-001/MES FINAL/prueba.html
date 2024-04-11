@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test de compatibilidad con animales</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f3f3f3;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .question {
+      display: none;
+      margin-bottom: 20px;
+      padding: 20px;
+      background-color: #f9f9f9;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .question.active {
+      display: block;
+    }
+    .question h2 {
+      margin-top: 0;
+    }
+    .question input[type="radio"] {
+      margin-bottom: 10px;
+    }
+    .result {
+      display: none;
+      margin-top: 20px;
+      text-align: center;
+    }
+    .result h2 {
+      margin-top: 0;
+    }
+    .result img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+    button {
+      display: block;
+      margin: 0 auto;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #FF4500;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #e64a19;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="question active" id="question1">
+    <h2>1. ¿Qué tipo de ambiente prefieres para tu hogar?</h2>
+    <input type="radio" name="q1" value="1"> Espacioso y con grandes áreas verdes.<br>
+    <input type="radio" name="q1" value="2"> Acogedor y lleno de rincones interesantes.<br>
+    <input type="radio" name="q1" value="3"> Moderno y minimalista.<br>
+    <input type="radio" name="q1" value="4"> Rústico y rodeado de naturaleza salvaje. <br>
+    <button onclick="nextQuestion()">Siguiente</button>
+  </div>
+
+  <div class="question" id="question2">
+    <h2>2. ¿Qué actividad prefieres para pasar un fin de semana?</h2>
+    <input type="radio" name="q2" value="1"> Explorar la naturaleza y observar animales en su hábitat natural.<br>
+    <input type="radio" name="q2" value="2"> Visitar museos o lugares culturales para aprender algo nuevo.<br>
+    <input type="radio" name="q2" value="3"> Practicar deportes de aventura como el senderismo o el kayak.<br>
+    <input type="radio" name="q2" value="4"> Relajarte en casa con una buena película o serie.<br>
+    <button onclick="nextQuestion()">Siguiente</button>
+  </div>
+
+  <!-- Agrega más preguntas aquí si es necesario -->
+
+  <div class="result" id="result">
+    <h2>Tu animal compatible es:</h2>
+    <p id="animal"></p>
+    <img src="" id="animalImage">
+  </div>
+</div>
+
+<script>
+  let currentQuestion = 1;
+
+  function nextQuestion() {
+    const currentQuestionElement = document.getElementById('question' + currentQuestion);
+    const nextQuestionElement = document.getElementById('question' + (currentQuestion + 1));
+    if (currentQuestionElement && nextQuestionElement) {
+      currentQuestionElement.classList.remove('active');
+      nextQuestionElement.classList.add('active');
+      currentQuestion++;
+    } else {
+      calculateResult();
+    }
+  }
+
+  function calculateResult() {
+    const answers = document.querySelectorAll('input[type="radio"]:checked');
+    let scores = {
+      'Peces': 0,
+      'Anfibios': 0,
+      'Reptiles': 0,
+      'Aves': 0,
+      'Mamíferos': 0
+    };
+
+    answers.forEach(answer => {
+      const value = parseInt(answer.value);
+      switch (answer.name) {
+        case 'q1':
+          scores['Reptiles'] += value;
+          break;
+        case 'q2':
+          scores['Aves'] += value;
+          break;
+        // Agrega más casos para más preguntas aquí si es necesario
+      }
+    });
+
+    const result = Object.keys(scores).reduce((a, b) => scores[a] > scores[b] ? a : b);
+    const animalImage = result.toLowerCase() + '.jpg'; // Suponiendo que las imágenes están nombradas como 'peces.jpg', 'anfibios.jpg', etc.
+
+    document.getElementById('animal').innerText = result;
+    document.getElementById('animalImage').src = animalImage;
+    document.getElementById('result').style.display = 'block';
+  }
+</script>
+
+</body>
+</html>
+

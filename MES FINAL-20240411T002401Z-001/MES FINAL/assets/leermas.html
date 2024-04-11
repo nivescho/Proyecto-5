@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mascotas Exóticas</title>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+ <link rel="stylesheet" href="css/leermas.css">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Brygada+1918:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <input type="checkbox" name="" id="toggler">
+        <label for="toggler" class="fas fa-bars"></label>
+        <a href="#" class="logo">Tesoro Salvaje  <span></span> </a>
+        <nav class="navbar">
+            <a href="#home">Inicio</a>
+            <a href="#about">Nosotros</a>
+            <a href="#products">Productos</a>
+            <a href="#reviews">Mascotas</a>
+            <a href="#contact">Contactanos</a>
+    
+        </nav>
+   
+    
+
+    <div class="icons">
+        <a href="#" class="fas fa-heart"></a>
+        <a href="#" class="fas fa-shopping-cart"></a>
+        <a href="#" class="fas fa-user"></a>
+    
+
+    </div>
+</header>
+
+
+<section class="home" id="home">
+    <div class="content">
+        <h3>Mascotas Exoticas</h3>
+        <span> descubre la armonía entre la naturaleza y la belleza </span>
+        <p>La tienda y veterinaria "Tesoro Salvaje: Mascotas exoticas" se basa en ofrecer una experiencia única para los amantes de los animales exóticos. Aquí, nos enfocamos en proporcionar una amplia variedad de especies raras y poco comunes, cuidadosamente seleccionadas y criadas con los más altos estándares de bienestar animal.</p>
+        <a href="#" class="btn">Adopta ahora</a>
+      
+    </div>
+
+</section>
+
+<section class="about" id="about">
+  <div class="content">
+    <h1 class="heading"><span></span>Nosotros</h1>
+    <div class="row">
+      <div class="carousel-container">
+        <div class="carousel">
+          <div><img src="./css/serpi.jpg" alt="Foto 1"></div>
+          <div><img src="./css/petaura.jpg" alt="Foto 2"></div>
+          <div><img src="./css/titi.jpg" alt="Foto 3"></div>
+          <div><img src="./css/zorro.jpg" alt="Foto 4"></div>
+          <div><img src="./css/kink.jpg" alt="Foto 5"></div>
+          <div><img src="./css/azo.png" alt="Foto 6"></div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="testimonials">
+        <div class="testimonial">
+          <img src="avatar1.jpg" alt="Avatar 1">
+          <p>"Mi erizo pigmeo africano ha sido una fuente constante de alegría en mi vida. Es increíblemente curioso y me encanta observarlo explorar su entorno."</p>
+          <p>- María</p>
+        </div>
+        <div class="testimonial">
+          <img src="avatar2.jpg" alt="Avatar 2">
+          <p>"Tener una serpiente como mascota ha sido una experiencia única. Aunque muchas personas tienen miedo de ellas, mi serpiente es muy dócil y me ha enseñado mucho sobre respetar a todas las criaturas."</p>
+          <p>- Juan</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script>
+  $(document).ready(function(){
+    $('.carousel').slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 2000,
+      arrows: false,
+      dots: true
+    });
+  });
+</script>
+
+</body>
+</html>

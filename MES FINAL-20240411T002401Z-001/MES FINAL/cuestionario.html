@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test de compatibilidad con animales</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .question {
+      margin-bottom: 20px;
+    }
+    .result {
+      display: none;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="question">
+  <h2>1. ¿Qué tipo de ambiente prefieres para tu hogar?</h2>
+  <input type="radio" name="q1" value="1"> Espacioso y con grandes áreas verdes.<br>
+  <input type="radio" name="q1" value="2"> Acogedor y lleno de rincones interesantes.<br>
+  <input type="radio" name="q1" value="2"> Moderno y minimalista.<br>
+  <input type="radio" name="q1" value="2">Rústico y rodeado de naturaleza salvaje. <br>
+</div>
+
+<div class="question">
+  <h2>2. ¿Qué actividad prefieres para pasar un fin de semana?</h2>
+  <input type="radio" name="q2" value="1"> Explorar la naturaleza y observar animales en su hábitat natural.<br>
+  <input type="radio" name="q2" value="2"> Visitar museos o lugares culturales para aprender algo nuevo.<br>
+  <input type="radio" name="q2" value="2">Practicar deportes de aventura como el senderismo o el kayak.<br>
+  <input type="radio" name="q2" value="2"> Relajarte en casa con una buena película o serie.<br>
+</div>
+
+
+<div class="question">
+    <h2>3. ¿Cómo prefieres pasar tu tiempo libre?</h2>
+    <input type="radio" name="q3" value="1"> Experimentando con nuevas recetas de cocina o practicando jardinería..<br>
+    <input type="radio" name="q3" value="2">Leyendo libros sobre ciencia, historia o cultura.<br>
+    <input type="radio" name="q3" value="3">Haciendo manualidades o proyectos creativos.<br>
+    <input type="radio" name="q3" value="4"> Practicando algún deporte o actividad física.<br>
+  </div>
+
+  <div class="question">
+    <h2>4. ¿Qué tipo de película prefieres ver?</h2>
+    <input type="radio" name="q4" value="1"> Documentales sobre la vida salvaje o viajes de aventura.<br>
+    <input type="radio" name="q4" value="3"> Películas de ciencia ficción o fantasía.<br>
+    <input type="radio" name="q4" value="2">Comedias ligeras o románticas.<br>
+    <input type="radio" name="q4" value="4"> Películas de terror o suspenso.<br>
+  </div>
+  <div class="question">
+    <h2>5. ¿Qué cualidad valoras más en un compañero de vida?</h2>
+    <input type="radio" name="q5" value="2"> Espontaneidad y amor por la aventura.<br>
+    <input type="radio" name="q5" value="3">  Inteligencia y capacidad para conversaciones profundas.<br>
+    <input type="radio" name="q5" value="4">Empatía y comprensión hacia los demás.<br>
+    <input type="radio" name="q5" value="1">  Lealtad y estabilidad emocional.<br>
+  </div>
+  <div class="question">
+    <h2>6. ¿Qué tipo de música te gusta escuchar?</h2>
+    <input type="radio" name="q6" value="1"> Música relajante inspirada en la naturaleza.<br>
+    <input type="radio" name="q6" value="2"> Música ecléctica que abarque varios géneros.<br>
+    <input type="radio" name="q6" value="2">Rock o música alternativa.<br>
+    <input type="radio" name="q6" value="2"> Música clásica o jazz.<br>
+  </div>
+
+  <div class="question">
+    <h2>7.¿Qué te llama más la atención de los animales exóticos?</h2>
+    <input type="radio" name="q7" value="3"> Su belleza única y su adaptación a entornos extraordinarios.<br>
+    <input type="radio" name="q7" value="4"> La fascinación por sus comportamientos peculiares y su rareza.<br>
+    <input type="radio" name="q7" value="1">Su capacidad para sobrevivir en condiciones extremas.<br>
+    <input type="radio" name="q7" value="2">La oportunidad de aprender sobre otras culturas y ecosistemas.<br>
+  </div>
+
+  <div class="question">
+    <h2>8. Si pudieras tener una mascota exótica, ¿cuál elegirías?</h2>
+    <input type="radio" name="q8" value="1"> Un pájaro tropical con colores brillantes y canto melodioso.<br>
+    <input type="radio" name="q8" value="2"> Un reptil como una iguana o una serpiente, fascinado por su singularidad.<br>
+    <input type="radio" name="q8" value="2">Un pequeño mamífero como un hurón o un zorro mascota.<br>
+    <input type="radio" name="q8" value="2"> Un insecto exótico como un escarabajo rinoceronte o una mantis religiosa.<br>
+  </div>
+
+  
+      
+
+<button onclick="calculateResult()">Calcular resultado</button>
+
+<div class="result" id="result">
+  <h2>Tu animal compatible es:</h2>
+  <p id="animal"></p>
+  <img src="./assets/css/img/kink.jpg" id="animalImage">
+</div>
+
+<script>
+  function calculateResult() {
+    const answers = document.querySelectorAll('input[type="radio"]:checked');
+    let fishScore = 8;
+    let amphibianScore = 9;
+    let reptileScore = 5;
+    let birdScore = 4;
+    let mammalScore = 3;
+
+    answers.forEach(answer => {
+      const value = parseInt(answer.value);
+      switch (answer.name) {
+        case 'q1':
+  if (value === 1) {
+    fishScore++;
+  } else if (value === 2 || value === 3 || value === 4 || value === 5) {
+    amphibianScore++;
+  } else if (value === 6 || value === 7 || value === 8 || value === 9) {
+    reptileScore++;
+  } else if (value === 10 || value === 11 || value === 12 || value === 13) {
+    birdScore++;
+  } else if (value === 14 || value === 15 || value === 16 || value === 17) {
+    mammalScore++;
+  }
+  break;
+        
+  case 'q2':
+  if (value === 2) {
+    fishScore++;
+  } else if (value === 4 || value === 6 || value === 2 || value === 5) {
+    amphibianScore++;
+  } else if (value === 6 || value === 7 || value === 8 || value === 9) {
+    reptileScore++;
+  } else if (value === 10 || value === 11 || value === 12 || value === 13) {
+    birdScore++;
+  } else if (value === 14 || value === 15 || value === 16 || value === 17) {
+    mammalScore++;
+  }
+  break;
+
+  case 'q3':
+  if (value === 3) {
+    fishScore++;
+  } else if (value === 3 || value === 5 || value === 4 || value === 5) {
+    amphibianScore++;
+  } else if (value === 6 || value === 7 || value === 8 || value === 9) {
+    reptileScore++;
+  } else if (value === 10 || value === 11 || value === 12 || value === 13) {
+    birdScore++;
+  } else if (value === 8 || value === 12 || value === 15 || value === 17) {
+    mammalScore++;
+  }
+  break;
+
+  case 'q4':
+  if (value === 4) {
+    fishScore++;
+  } else if (value === 2 || value === 3 || value === 4 || value === 5) {
+    amphibianScore++;
+  } else if (value === 6 || value === 7 || value === 8 || value === 9) {
+    reptileScore++;
+  } else if (value === 10 || value === 11 || value === 12 || value === 13) {
+    birdScore++;
+  } else if (value === 14 || value === 15 || value === 16 || value === 17) {
+    mammalScore++;
+  }
+  break;
+  case 'q5':
+  if (value === 5) {
+    fishScore++;
+  } else if (value === 2 || value === 3 || value === 4 || value === 5) {
+    amphibianScore++;
+  } else if (value === 6 || value === 7 || value === 8 || value === 9) {
+    reptileScore++;
+  } else if (value === 10 || value === 11 || value === 12 || value === 13) {
+    birdScore++;
+  } else if (value === 14 || value === 15 || value === 16 || value === 17) {
+    mammalScore++;
+  }
+  break;
+
+  case 'q6':
+  if (value === 6) {
+    fishScore++;
+  } else if (value === 2 || value === 3 || value === 4 || value === 5) {
+    amphibianScore++;
+  } else if (value === 6 || value === 7 || value === 8 || value === 9) {
+    reptileScore++;
+  } else if (value === 10 || value === 11 || value === 12 || value === 13) {
+    birdScore++;
+  } else if (value === 14 || value === 15 || value === 16 || value === 17) {
+    mammalScore++;
+  }
+  break;
+
+  case 'q7':
+  if (value === 7) {
+    fishScore++;
+  } else if (value === 2 || value === 3 || value === 4 || value === 5) {
+    amphibianScore++;
+  } else if (value === 6 || value === 7 || value === 8 || value === 9) {
+    reptileScore++;
+  } else if (value === 10 || value === 11 || value === 12 || value === 13) {
+    birdScore++;
+  } else if (value === 14 || value === 15 || value === 16 || value === 17) {
+    mammalScore++;
+  }
+  break;
+
+  case 'q8':
+  if (value === 8) {
+    fishScore++;
+  } else if (value === 2 || value === 3 || value === 4 || value === 5) {
+    amphibianScore++;
+  } else if (value === 6 || value === 7 || value === 8 || value === 9) {
+    reptileScore++;
+  } else if (value === 10 || value === 11 || value === 12 || value === 13) {
+    birdScore++;
+  } else if (value === 14 || value === 15 || value === 16 || value === 17) {
+    mammalScore++;
+  }
+  break;
+
+
+
+        // Add more questions here if needed
+      }
+    });
+
+    const scores = {
+      'Peces': fishScore,
+      'Un Anfibio': amphibianScore,
+      'Un Reptile': reptileScore,
+      'Un Ave': birdScore,
+      'Un Mamífero': mammalScore
+    };
+
+    const result = Object.keys(scores).reduce((a, b) => scores[a] > scores[b] ? a : b);
+
+    document.getElementById('animal').innerText = result;
+    document.getElementById('animalImage').src = result.toLowerCase() + '.jpg'; // Assuming images are named like 'peces.jpg', 'anfibios.jpg', etc.
+    document.getElementById('result').style.display = 'block';
+  }
+</script>
+
+</body>
+</html>
