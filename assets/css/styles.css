@@ -396,26 +396,30 @@ header #toggler{
 
 .contact .row {
     display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    align-items: center;
+    flex-wrap: nowrap;
+    gap: 1rem;
+    align-items: center; /* Alinea los elementos verticalmente al centro del contenedor */
+    justify-content: center; /* Centra los elementos horizontalmente */
 }
 
 .contact .row form {
-    flex:1 1 40rem;
-    padding: 2rem 2.5rem;
+    flex: 0.5; /* Ajusta el valor de flex para reducir el tamaño horizontal del formulario */
+    padding: 0.5rem 1rem; /* Menor padding en la parte superior e inferior */
     box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .1);
-    border: 1rem solid rgb(0, 0, 0, .1);
+    border: 1rem solid rgba(0, 0, 0, .1);
     background: #fff;
-    border-radius: .5rem;
+    border-radius: 2.5rem;
+    margin: 6rem; /* Margen para centrar el formulario */
 }
 
-.contact .row .image{
-    flex:1 1 40rem;
+.contact .row .image {
+    flex: 0.5; /* Ajusta el valor de flex para reducir el tamaño horizontal de la imagen */
+    max-width: 40rem; /* Ancho máximo de la imagen */
 }
 
 .contact .row .image img {
     width: 100%;
+    border-radius: 2.5rem; /* Añade el mismo radio de borde que el formulario */
 }
 
 .contact .row form .box {
@@ -423,10 +427,14 @@ header #toggler{
     font-size: 1.7rem;
     color: #333;
     text-transform: none;
-    border: 1rem solid rgb(0, 0, 0, .1);
+    border: 1rem solid rgba(0, 0, 0, .1);
     border-radius: 5rem;
-    margin: 7rem 0;
+    margin: 1rem 0; /* Ajusta el margen para centrar el formulario */
     width: 100%;
+}
+
+.contact .row form .btn {
+    margin-top: 1rem; /* Ajusta el margen superior del botón */
 }
 
 .contact .row form .box:focus {
@@ -438,14 +446,15 @@ header #toggler{
     resize: none;
 }
 
+
 .footer .box-container {
     display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
+    justify-content: space-between; /* Espacio entre los elementos */
+    flex-wrap: nowrap; /* No permitir que se envuelva a la siguiente línea */
 }
 
 .footer .box-container .box {
-   flex: 1 1 25rem; 
+    flex: 1 1 25rem;
 }
 
 .footer .box-container .box h3 {
@@ -479,6 +488,7 @@ header #toggler{
 .footer .credit span {
     color: var(--mango);
 }
+
 
 
 
